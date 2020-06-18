@@ -1,19 +1,47 @@
 import React from 'react'
+import {
+	BrowserRouter as Router,
+	Switch,
+	Route,
+	Link
+} from 'react-router-dom'
 import Header from './Components/Header'
 import Footer from './Components/Footer'
-import HelloWorld from './Components/HelloWorld'
 import CountExample from './Components/CountExample'
+import Home from './Views/Home'
+import About from './Views/About'
+import Contact from './Views/Contact'
 
 function App() {
   return (
     <div>
-    	<Header />
+    	<Router>
 
-    	<HelloWorld  name="Aung Aung" />
+    		<Header />
 
-    	<CountExample />
+    		<div className="p-3">
 
-    	<Footer />
+		    	<CountExample />
+		    
+		    	<Switch>
+		    		<Route exact path="/">
+		    			<Home />
+		    		</Route>
+
+		    		<Route path="/about">
+		    			<About />
+		    		</Route>
+
+		    		<Route path="/contact">
+		    			<Contact />
+		    		</Route>
+		    	</Switch>
+
+    		</div>
+
+	    	<Footer />
+
+    	</Router>
     </div>
   );
 }
