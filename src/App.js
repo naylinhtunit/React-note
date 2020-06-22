@@ -11,6 +11,7 @@ import CountExample from './Components/CountExample'
 import Home from './Views/Home'
 import About from './Views/About'
 import Contact from './Views/Contact'
+import Product from './Views/Product'
 
 function App() {
   return (
@@ -30,6 +31,10 @@ function App() {
 
 		    		<Route path="/about">
 		    			<About />
+		    		</Route>
+
+		    		<Route path="/product/:id">
+		    			<Product />
 		    		</Route>
 
 		    		<Route path="/contact">
